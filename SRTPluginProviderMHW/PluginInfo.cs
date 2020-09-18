@@ -1,17 +1,17 @@
 ﻿using SRTPluginBase;
 using System;
 
-namespace SRTPluginProviderRE3
+namespace SRTPluginProviderMHWorld
 {
     internal class PluginInfo : IPluginInfo
     {
-        public string Name => "Game Memory Provider (Resident Evil 3 (2020))";
+        public string Name => "Game Memory Provider (Monster Hunter World)";
 
-        public string Description => "A game memory provider plugin for Resident Evil 3 (2020).";
+        public string Description => "A game memory provider plugin for Monster Hunter World.";
 
-        public string Author => "Squirrelies";
+        public string Author => "VideoGameRoulette";
 
-        public Uri MoreInfoURL => new Uri("https://github.com/Squirrelies");
+        public Uri MoreInfoURL => new Uri("https://github.com/VideoGameRoulette");
 
         public int VersionMajor => assemblyVersion.Major;
 
