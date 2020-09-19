@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SRTPluginProviderMHW
+﻿namespace SRTPluginProviderMHW
 {
     public class Structs
     {
@@ -31,7 +27,7 @@ namespace SRTPluginProviderMHW
             Leshen,
             PukeiPukei,
             Nergigante,
-            XenoJiva,
+            XenoJiiva,
             KuluYaKu,
             TzitziYaKu,
             Jyuratodus,
@@ -39,10 +35,10 @@ namespace SRTPluginProviderMHW
             Paolumu,
             Legiana,
             GreatGirros,
-            Obogaron,
+            Odogaron,
             Radobaan,
             VaalHazak,
-            Dodogame,
+            Dodogama,
             Bazelgeuse = 39,
             AncientLeshen = 51,
             Tigrex = 61,
@@ -82,15 +78,15 @@ namespace SRTPluginProviderMHW
 
         public class MonsterEntry
         {
-            public int MonsterID;
-            public MonsterList MonsterName;
-            public int Captured;
-            public int Hunted;
+            public int MonsterID { get; private set; }
+            public string MonsterName { get => ((MonsterList)MonsterID).ToString(); }
+            public int Captured { get; private set; }
+            public int Hunted { get; private set; }
+            public int Total { get => Hunted + Captured; }
 
             public MonsterEntry()
             {
                 this.MonsterID = -1;
-                this.MonsterName = MonsterList.None;
                 this.Captured = 0;
                 this.Hunted = 0;
             }
@@ -98,7 +94,6 @@ namespace SRTPluginProviderMHW
             public void SetValues(int _MonsterID, int _Captured, int _Hunted)
             {
                 this.MonsterID = _MonsterID;
-                this.MonsterName = (MonsterList)_MonsterID;
                 this.Captured = _Captured;
                 this.Hunted = _Hunted;
             }
